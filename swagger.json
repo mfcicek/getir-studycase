@@ -1,0 +1,98 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Fatih Çiçek - Getir - NodeJS",
+    "description": "Fetch data from database",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "contact": {
+      "name": "Fatih Çiçek",
+      "email": "fc.fatihcicek@gmail.com"
+    }
+  },
+  "tags": [
+    {
+      "name": "Records",
+      "description": "Fetch records from the database"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/records": {
+      "post": {
+        "tags": [
+          "Records"
+        ],
+        "summary": "Fetch records from the database",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "fetch data",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Record"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "schema": {
+              "$ref": "#/definitions/Record"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "examples": {
+              "code": 400,
+              "msg":  "Bad Request"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "examples": {
+              "code": 404,
+              "msg":  "Not Found"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "definitions": {
+    "Record": {
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string",
+          "example": "2016-01-26"
+        },
+        "endDate": {
+          "type": "string",
+          "example": "2018-02-02"
+        },
+        "minCount": {
+          "type": "integer",
+          "example": 2700
+        },
+        "maxCount": {
+          "type": "integer",
+          "example": 3000
+        }
+      }
+    }
+  }
+}

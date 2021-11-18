@@ -1,0 +1,35 @@
+{
+  "name": "getir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start-dev": "nodemon app.js",
+    "start": "node app.js",
+    "test:integration": "jest tests/integration --all --runInBand --watch --forceExit --detectOpenHandles --verbose --coverage ",
+    "test:unit": "jest tests/unit --all  --watch --forceExit --detectOpenHandles --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "mongoose": "^6.0.12",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "jest": "^27.3.1",
+    "node-mocks-http": "^1.11.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
+  }
+}
